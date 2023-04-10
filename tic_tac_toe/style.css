@@ -1,0 +1,92 @@
+body {
+    background-color: lightsalmon;
+}
+
+
+.board {
+    border: 1px solid black;
+    margin: auto;
+    height: 560px;
+    width: 560px;
+}
+
+.cell {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 10em;
+    font-weight: 900;
+   
+}
+.cell:hover{
+    cursor: pointer;
+    background-color: rgb(255, 183, 154);
+}
+.controlCenter {
+    margin-top: 3em;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    font-size: x-large;
+}
+
+.twoPlayer {
+    background-color: salmon;
+    height: 3em;
+    width: 13em;
+    border-radius: 6px;
+    font-weight: 600;
+
+}
+
+.row {
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+}
+
+.singlePlayer {
+    background-color: rgb(25, 202, 134);
+    height: 3em;
+    width: 13em;
+    border-radius: 6px;
+    margin-right: 1.6em;
+    font-weight: 600;
+}
+
+.startButton {
+    background-color: rgb(233, 228, 228);
+    height: 3em;
+    width: 13em;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.startButton:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.singlePlayer:hover{
+    cursor: pointer;
+    background-color: rgb(17, 170, 111);
+}
+
+.twoPlayer:hover{
+    cursor: pointer;
+    background-color: lightsalmon;
+}
+
+.winningCells {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 10em;
+    font-weight: 900;
+    background-color: rgba(12, 182, 12, 0.638);
+   
+}
