@@ -21,7 +21,7 @@ twoPlayer.innerHTML = 'Two Player Mode'
 twoPlayer.classList = 'twoPlayer'
 
 
-function winner(playerMoves, header) {
+function determineWinner(playerMoves, header) {
     let counter = 0
     let hold = []
     for (let x of keys) {
@@ -68,7 +68,7 @@ twoPlayer.addEventListener('click', () => {
     for (let cell of cells) {
         cell.addEventListener('click', () => {
             if (startGame['game']) {
-                if (player1Turn && spotsTaken !== 9) {
+                if (player1Turn) {
                     if (!cell.innerHTML) {
                         cell.innerHTML = 'X'
                         spotsTaken++
@@ -80,18 +80,18 @@ twoPlayer.addEventListener('click', () => {
                             title.innerHTML = 'Player2 Turn'
                         }
                         player1Moves.push(cell.id)
-                        winner(player1Moves, 'Player1 Wins Refresh To Play Again')
+                        determineWinner(player1Moves, 'Player1 Wins Refresh To Play Again')
                         player1Turn = false
                         player2Turn = true
                     }
                 }
-                else if (player2Turn && spotsTaken !== 9) {
+                else if (player2Turn) {
                     if (!cell.innerHTML) {
                         title.innerHTML = 'Player1 Turn'
                         cell.innerHTML = 'O'
                         spotsTaken++
                         player2Moves.push(cell.id)
-                        winner(player2Moves, 'Player2 Wins Refresh To Play Again')
+                        determineWinner(player2Moves, 'Player2 Wins Refresh To Play Again')
                         player2Turn = false
                         player1Turn = true
                     }
@@ -114,7 +114,7 @@ singlePlayer.addEventListener('click', () => {
     for (let cell of cells) {
         cell.addEventListener('click', () => {
             if (startGame['game']) {
-                if (player1Turn && spotsTaken !== 9) {
+                if (player1Turn) {
                     if (!cell.innerHTML) {
                         cell.innerHTML = 'X'
                         spotsTaken++
@@ -182,7 +182,7 @@ let mutationObsever = new MutationObserver((mutation) => {
             let lossThreat = false
             let counter = 0
             let holder = []
-            for (let x = 0; x < keys.length; x++) {
+            for (let x = 0; x < keys.length; x++){
                 if (counter === 2) break
                 counter = 0
                 holder = []
@@ -234,11 +234,7 @@ let mutationObsever = new MutationObserver((mutation) => {
                         player2Moves.push(cell.id)
                         break
                     }
-                    else {
-                        continue
-                    }
                 }
-
             }
         }
 
