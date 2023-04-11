@@ -193,7 +193,6 @@ let mutationObsever = new MutationObserver((mutation) => {
                         if (counter === 2) {
                             let cell = document.getElementById(keys[x][keys[x].length - 1])
                             if (cell.innerHTML !== 'X' && cell.innerHTML !== 'O') {
-                                console.log('loss threat activated lvl1')
                                 cell.innerHTML = 'O'
                                 player2Moves.push(cell.id)
                                 lossThreat = true
@@ -202,7 +201,6 @@ let mutationObsever = new MutationObserver((mutation) => {
                             else {
                                 cell = document.getElementById(keys[x][1])
                                 if (cell.innerHTML !== 'X' && cell.innerHTML !== 'O') {
-                                    console.log('loss threat activated lvl2')
                                     cell.innerHTML = 'O'
                                     player2Moves.push(cell.id)
                                     lossThreat = true
@@ -211,7 +209,6 @@ let mutationObsever = new MutationObserver((mutation) => {
                                 else {
                                     cell = document.getElementById(keys[x][0])
                                     if (cell.innerHTML !== 'X' && cell.innerHTML !== 'O') {
-                                        console.log('loss threat activated lvl3')
                                         cell.innerHTML = 'O'
                                         player2Moves.push(cell.id)
                                         lossThreat = true
